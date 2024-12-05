@@ -1,7 +1,9 @@
 name: Java Maven Build & Publish Artifact
 
 on:
-  workflow_dispatch
+  pull_request:
+    branches: [ "main" ]
+  
   
 jobs:
   build_test:
