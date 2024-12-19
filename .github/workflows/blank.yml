@@ -18,5 +18,13 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - run: sh ./testssh.sh
+    - name: checkout another repo
+      uses: actions/checkout@v3
+      with:
+        repository: utpalchat/edms-repo-410
+        token: ${{ secrets.TOKEN }}
+        path: edms-repo
+    - run: | 
+        sh ./testssh.sh
+        ls -lrt edms-repo
 
