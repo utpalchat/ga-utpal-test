@@ -28,6 +28,8 @@ jobs:
         sh ./testssh.sh
         ls -lrt edms-repo
         cd edms-repo
+        git config --global user.name "utpalchat"
+        git config --global user.email "utpalchat@yahoo.com"
         echo "Hello World" > hello.txt
         git add .
         git commit -m "added hello.txt"
